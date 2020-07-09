@@ -1,0 +1,3 @@
+https://www.youtube.com/watch?v=2B--nzfoQ9s
+export PATH=/home/user/Qt5.9.8/5.9.8/gcc_64/bin/:$PATH
+linuxdeployqt-6-x86_64.AppImage /home/user/build-QT_Cad-Desktop_Qt_5_9_8_GCC_64bit-Debug/QT_Cad

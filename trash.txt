@@ -1,0 +1,19 @@
+
+POINT arc_center(double xs,double ys,double xe, double ye, double radius){
+    POINT p;
+    double radsq=radius*radius;
+    double q=sqrt(((xe-xs)*(xe-xs))+((ye-ys)*(ye-ys)));
+    double x3=(xs+xe)/2;
+    double y3=(ys+ye)/2;
+    //p.x=x3+sqrt(radsq-((q/2)*(q/2)))*((ys-ye)/q); //G3
+    //p.y=y3+sqrt(radsq-((q/2)*(q/2)))*((xe-xs)/q);
+
+    p.x=x3-sqrt(radsq-((q/2)*(q/2)))*((ys-ye)/q); //G2
+    p.y=y3-sqrt(radsq-((q/2)*(q/2)))*((xe-xs)/q);
+    return p;
+}
+
+
+auto construct_objects =[](std::vector<OBJECT>::iterator it){
+return array;
+};
