@@ -3,6 +3,15 @@ This is a upload of the current status of the CadCam program. Not finished, only
 
 The Cad Cam program has a opengl interface. This upload is specific for testing pocket offsets, CavalierContours https://github.com/jbuckmccready/CavalierContours
 
+Cavaliercontours works with lines (primitives) with a bulge factor 0. The line has become a arc if the bulge factor is !=0. A bulge factor of 1 is half circle. (semicircle). The bulge factor <0 is a g2 or cw arc. The bulge factor >0 is a g3 or ccw arc. The Cadcam program accepts bulge factors bigger then 1 and preprocess them for the cavaliercontours data input.
+
+If the cadcam program has to input a spline into cavaliercontours the following method is used:
+1. Convert the spline to points (linestrip), the output resolution can be 0.000001 to 1. (time)
+2. Avoid nested points, the points are exepted when distance is bigger than value l. l=lenght value for accepting output.
+   *cavaliercontours is not accepting nested items, wich is normal.
+3. Store the points in a simple xyz data container of type : std::vector<POINT> and pass them into the cavaliercontours with bulge factor 0, as linestrip.
+4. A charming solution can be to pass in bulge value's. This can be adapted quite easy into the source code.
+
 The program has no QT dependencies. It's important to use the std library and leave the QT libraries untouched. 
 In this way the program can be ported to other platforms in minutes. 
 
