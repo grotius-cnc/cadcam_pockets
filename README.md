@@ -32,7 +32,7 @@ The spline can be swapped wihout noticing any changes in output.
 Used spline algoritme : https://mathworld.wolfram.com/CubicSpline.html
 Expanded with : difference function
 
-CadCam program output example :
-
+CadCam program output example wihout islands, see cam_offset.h :
 ![alt text](https://raw.githubusercontent.com/grotius-cnc/CadCam_pockets/master/example/printed_circuit_contour_offset.png)
+Example with islands, the islands are added in a loop, deactivate the comments cam_offset.h :
 ![alt text](https://raw.githubusercontent.com/grotius-cnc/CadCam_pockets/master/example/evolution_pocket.png)
